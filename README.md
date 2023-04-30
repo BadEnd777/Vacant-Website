@@ -4,9 +4,10 @@ This is the source code for [Vacant - Modify VRCSDK](https://vacant-sdk.pages.de
 
 ## Stack
 
-- [Svelte](https://svelte.dev/) - Frontend framework
+- [SvelteKit](https://kit.svelte.dev/) - Frontend framework
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 - [Svelte Icons Pack](https://github.com/leshak/svelte-icons-pack) - Icons
+- [Cloudflare Pages](https://pages.cloudflare.com/) - Hosting
 
 ## Project structure
 
@@ -43,6 +44,26 @@ npm run dev
 
 # build for production
 npm run build
+```
+
+## Adapter
+
+This project uses [Cloudflare Pages](https://pages.cloudflare.com/) as hosting provider. You can use any other hosting provider, but you will need to change the adapter in `svelte.config.js` file. For more information, see [SvelteKit adapter docs](https://kit.svelte.dev/docs/adapters).
+
+```js
+// svelte.config.js
+import adapter from '@sveltejs/adapter-cloudflare';
+
+export default {
+	kit: {
+		adapter: adapter({
+			routes: {
+				include: ['/*'],
+				exclude: ['<all>']
+			}
+		})
+	}
+};
 ```
 
 ## License
