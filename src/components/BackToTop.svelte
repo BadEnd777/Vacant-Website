@@ -19,7 +19,7 @@
 <LinkTo
   to="top"
   className={`fixed bottom-10 right-10 z-50
-bg-dark-100 dark:bg-light-100 text-light-100 dark:text-dark-100
+bg-accent text-light-100
 rounded-full p-2 hover:-translate-y-2
 transition-all duration-200 ease-in-out
 ${show ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}

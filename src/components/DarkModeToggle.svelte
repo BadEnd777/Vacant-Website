@@ -32,9 +32,9 @@
 
 <button
   class="
-  ml-4 p-2 rounded-md
-  bg-dark-100 dark:bg-light-100 text-light-100 dark:text-dark-100
-  hover:bg-dark-50 dark:hover:bg-light-50 hover:scale-105
+  p-2 rounded-md
+  bg-accent text-light-100
+  hover:scale-105
   transition-all duration-200 ease-in-out
   "
   on:click={toggleDarkMode}

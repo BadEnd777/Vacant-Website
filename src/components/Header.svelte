@@ -36,10 +36,11 @@
         </LinkTo>
       </div>
       <div class="flex items-center">
+        <DarkModeToggle />
         <a
           href="https://github.com/BadEnd777/Vacant-Website"
           target="_blank"
-          class="text-dark-100 dark:text-light-100"
+          class="text-dark-100 dark:text-light-100 ml-4"
         >
           <Icon
             src={Github}
@@ -48,7 +49,6 @@
             className="hover:scale-110 transition-transform duration-200 ease-in-out"
           />
         </a>
-        <DarkModeToggle />
         <div class="hidden lg:flex items-center">
           <NavLink to="overview" className="ml-4">Overview</NavLink>
           <NavLink to="installation" className="ml-4">Installation</NavLink>
@@ -80,11 +80,11 @@
             ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}
             `}
           >
-            <NavLink to="overview" className="p-2">Overview</NavLink>
-            <NavLink to="installation" className="p-2">Installation</NavLink>
-            <NavLink to="features" className="p-2">Features</NavLink>
-            <NavLink to="preview" className="p-2">Preview</NavLink>
-            <a href="/vacant.unitypackage" class="p-2">Download</a>
+            <NavLink to="overview" className="p-2 transition-colors duration-200 rounded-md ease-in-out hover:bg-light-50 dark:hover:bg-dark-50">Overview</NavLink>
+            <NavLink to="installation" className="p-2 transition-colors duration-200 rounded-md ease-in-out hover:bg-light-50 dark:hover:bg-dark-50">Installation</NavLink>
+            <NavLink to="features" className="p-2 transition-colors duration-200 rounded-md ease-in-out hover:bg-light-50 dark:hover:bg-dark-50">Features</NavLink>
+            <NavLink to="preview" className="p-2 transition-colors duration-200 rounded-md ease-in-out hover:bg-light-50 dark:hover:bg-dark-50">Preview</NavLink>
+            <a href="/vacant.unitypackage" class="p-2 transition-colors duration-200 rounded-md ease-in-out hover:bg-light-50 dark:hover:bg-dark-50">Download</a>
           </div>
         </div>
       </div>

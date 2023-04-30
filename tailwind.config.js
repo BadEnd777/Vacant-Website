@@ -5,8 +5,8 @@ export default {
     theme: {
         colors: {
             light: {
-                100: '#f6f8fa',
-                50: '#ffffff',
+                100: '#edf2f4',
+                50: '#d9dee4',
             },
             dark: {
                 100: '#0c0c0c',
@@ -14,9 +14,9 @@ export default {
             },
             gray: {
                 light: '#686363',
-                dark: '#a8a3a3',
+                dark: '#777777',
             },
-            accent: '#6B46C1',
+            accent: '#ff6600',
         },
     },
     plugins: []
