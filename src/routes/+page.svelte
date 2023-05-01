@@ -83,7 +83,7 @@
       <video
         src={Install}
         controls
-        class="w-[800px] h-[450px] rounded-md shadow-lg"
+        class="w-full max-w-4xl rounded-md border-2 border-light-50 dark:border-dark-50"
       >
         <track kind="captions" />
       </video>
@@ -163,12 +163,34 @@
     >
       Here are some of the previews that we have in vacant.
     </p>
-    <div class="flex flex-col md:flex-col lg:flex-row items-center justify-center">
-      <img src={Preview3} alt="Preview 3" class="lg:max-w-[300px] m-4 rounded-md" />
-      <img src={Preview1} alt="Preview 4" class="lg:max-w-[300px] m-4 rounded-md" />
-      <img src={Preview5} alt="Preview 5" class="lg:max-w-[300px] m-4 rounded-md" />
-      <img src={Preview2} alt="Preview 2" class="lg:max-w-[300px] m-4 rounded-md" />
-      <img src={Preview4} alt="Preview 1" class="lg:max-w-[300px] m-4 rounded-md" />
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-8 w-full justify-center items-center max-w-screen-2xl"
+    >
+      <img
+        src={Preview3}
+        alt="Preview 3"
+        class="lg:max-w-[300px] m-4 rounded-md"
+      />
+      <img
+        src={Preview1}
+        alt="Preview 4"
+        class="lg:max-w-[300px] m-4 rounded-md"
+      />
+      <img
+        src={Preview5}
+        alt="Preview 5"
+        class="lg:max-w-[300px] m-4 rounded-md"
+      />
+      <img
+        src={Preview2}
+        alt="Preview 2"
+        class="lg:max-w-[300px] m-4 rounded-md"
+      />
+      <img
+        src={Preview4}
+        alt="Preview 1"
+        class="lg:max-w-[300px] m-4 rounded-md"
+      />
     </div>
   </div>
 </Layout>

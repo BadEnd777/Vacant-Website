@@ -1,21 +1,22 @@
 <script>
-  import { onMount } from "svelte";
+  import { NAVITEMS } from "../data/navItems.js";
   import Logo from "../lib/images/vacant.png";
   import Icon from "svelte-icons-pack/Icon.svelte";
   import LinkTo from "./LinkTo.svelte";
   import NavLink from "./NavLink.svelte";
+  import NavLinkBtn from "./NavLinkBtn.svelte";
   import DarkModeToggle from "./DarkModeToggle.svelte";
 
   import Github from "svelte-icons-pack/fa/FaBrandsGithub";
 
-  let isMenuOpen;
-
-  onMount(() => {
-    isMenuOpen = false;
-  });
+  let isMenuOpen = false;
 
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
+  };
+
+  const closeMenu = () => {
+    isMenuOpen = false;
   };
 </script>
 
@@ -50,10 +51,9 @@
           />
         </a>
         <div class="hidden lg:flex items-center">
-          <NavLink to="overview" className="ml-4">Overview</NavLink>
-          <NavLink to="installation" className="ml-4">Installation</NavLink>
-          <NavLink to="features" className="ml-4">Features</NavLink>
-          <NavLink to="preview" className="ml-4">Preview</NavLink>
+          {#each NAVITEMS as navItem}
+            <NavLink to={navItem.hash} className="ml-4">{navItem.title}</NavLink>
+          {/each}
           <a
             href="/vacant.unitypackage"
             class="ml-4 text-dark-100 dark:text-light-100 hover:text-dark-200 dark:hover:text-light-200"
@@ -80,11 +80,15 @@
             ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}
             `}
           >
-            <NavLink to="overview" className="p-2 transition-colors duration-200 rounded-md ease-in-out hover:bg-light-50 dark:hover:bg-dark-50">Overview</NavLink>
-            <NavLink to="installation" className="p-2 transition-colors duration-200 rounded-md ease-in-out hover:bg-light-50 dark:hover:bg-dark-50">Installation</NavLink>
-            <NavLink to="features" className="p-2 transition-colors duration-200 rounded-md ease-in-out hover:bg-light-50 dark:hover:bg-dark-50">Features</NavLink>
-            <NavLink to="preview" className="p-2 transition-colors duration-200 rounded-md ease-in-out hover:bg-light-50 dark:hover:bg-dark-50">Preview</NavLink>
-            <a href="/vacant.unitypackage" class="p-2 transition-colors duration-200 rounded-md ease-in-out hover:bg-light-50 dark:hover:bg-dark-50">Download</a>
+            {#each NAVITEMS as navItem}
+              <NavLinkBtn to={navItem.hash} onClick={closeMenu}>{navItem.title}</NavLinkBtn>
+            {/each}
+            <a
+              href="/vacant.unitypackage"
+              class="p-2 transition-colors duration-200 rounded-md ease-in-out hover:bg-light-50 dark:hover:bg-dark-50"
+              on:click={closeMenu}
+              >Download</a
+            >
           </div>
         </div>
       </div>

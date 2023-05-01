@@ -1,5 +1,6 @@
 <script>
-  import "../css/base.css";
+  import "../css/base.css"; // Global CSS
+
   import Header from "./Header.svelte";
   import Footer from "./Footer.svelte";
   import BackToTop from "./BackToTop.svelte";
@@ -7,10 +8,7 @@
   const title = "Vacant - Modify VRCSDK";
   const description =
     "Vacant is a modify version of the VRCSDK by VRChat. The purpose of this mod is to make it easier to create mods for VRChat. The mod is also published for using and sharing with the community.";
-  let origin;
-  if (typeof window !== "undefined") {
-    origin = window.location.origin;
-  }
+  const origin = "https://vacant-sdk.pages.dev";
   const image = `${origin}/images/vacant.png`;
 </script>
 

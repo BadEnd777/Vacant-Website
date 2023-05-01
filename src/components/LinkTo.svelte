@@ -1,4 +1,8 @@
 <script>
+  export let to;
+  export let className;
+  export let onClick = null;
+
   const ScrollTo = (e) => {
     e.preventDefault();
     const link = e.currentTarget;
@@ -8,10 +12,10 @@
       top: element.offsetTop,
       behavior: "smooth",
     });
-  };
 
-  export let to;
-  export let className;
+    if (!onClick) return;
+    onClick();
+  };
 </script>
 
 <a href={`#${to}`} class={className} on:click={ScrollTo}>
